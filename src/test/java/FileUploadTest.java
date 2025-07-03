@@ -9,6 +9,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import java.io.File;
 import java.time.Duration;
+import static org.testng.Assert.assertEquals;
 
 public class FileUploadTest {
     /*
@@ -42,7 +43,7 @@ public class FileUploadTest {
                 .until(ExpectedConditions.visibilityOfElementLocated(By.id("uploaded-files"))).getText();
 
         // Проверяем, что имя загруженного файла соответствует ожидаемому
-        softAssert.assertEquals(uploadedFileName, "TestPictureFile.PNG", "File name doesn't match");
+        assertEquals(uploadedFileName, "TestPictureFile.PNG", "File name doesn't match");
 
         softAssert.assertAll();
     }
